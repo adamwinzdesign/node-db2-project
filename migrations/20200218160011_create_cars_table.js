@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-  return knex.schema.createTable('characters', tbl => {
+  return knex.schema.createTable('cars', tbl => {
     // primary key
     tbl.increments();
 
@@ -27,10 +27,10 @@ exports.up = function(knex) {
     
     tbl
       .string('title status')
-      
+
   })
 };
 
 exports.down = function(knex) {
-  
+  return knex.schema.dropTableIfExists("cars");
 };
