@@ -11,7 +11,7 @@ server.use(express.json());
 server.use(morgan('dev'));
 server.use(helmet());
 
-// server.use('/api/cars', carsRouter);
+server.use('/api/cars', carsRouter);
 
 server.get('/', (req, res) => {
   res.send(`
