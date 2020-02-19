@@ -24,6 +24,7 @@ router.get('/', (req, res) => {
     })
 })
 
+// post new car
 router.post('/', (req, res) => {
   const carData = req.body;
   carsDB('cars')
@@ -39,5 +40,18 @@ router.post('/', (req, res) => {
       res.status(500).json({ errorMessage: 'Error posting a new car', error });
     })
 })
+
+// delete car
+// router.delete('/:id', (req, res) => {
+//   const id = req.params.id;
+
+//   carsDB.remove(id)
+//     .then(car => {
+//       res.status(200).json({ message: 'Car deleted!', car })
+//     })
+//     .catch(error => {
+//       res.status(500).json({ message: 'Error deleting that car!', error })
+//     })
+// })
 
 module.exports = router;
